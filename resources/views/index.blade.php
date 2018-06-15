@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Lunch List</h1>
+     <div class="alert alert-info" role="alert"><h1>Lunch List</h1></div>
         @foreach ($events as $event)
+        
+        
             Date : {{ $event->month }}/{{ $event->day }} {{ $event->timefrom }}-{{ $event->timeto }}
             <br>
             {!! link_to_route('events.show', $event->title, ['title' => $event->id]) !!}
@@ -16,6 +18,7 @@
             {!! Form::close() !!}
             <br>
         @endforeach
+        
         
     
         
@@ -37,9 +40,10 @@
         <br>
         @endif
         <br>
+        
+        
         ------Debug用おわり------
         <br>
         <br>
         
 @endsection
-
